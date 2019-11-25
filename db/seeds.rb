@@ -32,6 +32,16 @@ puts "users créés"
 end
 puts "paniers créés"
 
-20.times do
+5.times do 
+	Order.create!(user_id: User.all.sample.id)
+end
+puts "commandes créées"
+
+10.times do 
+	JoinTableItemsOrder.create!(order_id: Order.all.sample.id, item_id: Item.all.sample.id)
 end
 
+10.times do 
+	JoinTableCartsItem.create!(item_id: Item.all.sample.id, cart_id: Cart.all.sample.id)
+end
+puts "commandes et paniers remplis"

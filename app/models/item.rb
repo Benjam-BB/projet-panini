@@ -1,6 +1,9 @@
 class Item < ApplicationRecord
 	has_many :join_table_carts_items
 	has_many :carts, through: :join_table_carts_items
+	has_many :join_table_items_orders
+	has_many :orders, through: :join_table_items_orders
+
 	validates :title,
 		presence: true
 	validates :price,
