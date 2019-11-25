@@ -1,0 +1,10 @@
+<h1 class="text-center mb-4">la carte </h1>
+<div class="container pt-2">
+	<h13 class=""> <strong>Titre :</strong> <%= @item.title %> </h1>
+	<div class=""> <strong>Description :</strong> <%= @item.description %> </div>
+	<div class=""> <strong>Prix :</strong> <%= @item.price %> € </div>
+	<img src="<%= @item.image_url %>">
+	<div class="pt-2"> 
+	    <%= link_to 'Ajouter au panier', "#", :class => "btn btn-primary"  %> 
+	</div>  
+</div>

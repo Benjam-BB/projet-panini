@@ -1,0 +1,17 @@
+<div class="container">
+	<% @items.each do |item| %>
+	       <div class="col-md-4 mt-4">
+	        <div class="card h-100">
+	          <img src="<%= item.image_url %>">
+	          <div class="card-body">
+	            <h4 class="card-title"> <%= item.title %> </h4>
+	            <p class="card-text"> <%= item.description %></p>
+	          </div>
+	          <div class="card-footer d-flex justify-content-between">
+	            <div> <span class="badge badge-primary mt-2"><%= item.price %> </span> € </div>
+	          </div>
+	        </div>
+	      </div>
+	    
+	<% end %>
+</div>
