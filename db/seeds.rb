@@ -32,3 +32,6 @@ puts "users créés"
 end
 puts "paniers créés"
 
+20.times do
+end
+
