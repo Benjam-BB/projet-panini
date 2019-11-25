@@ -6,13 +6,13 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag    'bootstrap', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" type="text/css" href="/Users/benjaminbertrand/Documents/THP/Final_Project/panini/app/assets/stylesheets/bootstrap.css">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
   <header>
-   <%= render 'navbar'%>
+  <%= render "layouts/navbar"%>
   </header>
  <div class="m-3 row">
    <button class="btn btn-primary">Valider</button>
