@@ -1,7 +1,6 @@
 class Item < ApplicationRecord
 	validates :title,
-		presence: true,
-		length: { in: 3..15, wrong_length: "3 to 15 characters is allowed" }
+		presence: true
 	validates :price,
 		presence: true, numericality: { greater_than: 0 }
 	validates :description,
