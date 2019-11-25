@@ -23,14 +23,12 @@ end
 puts "produits créés"
 
 20.times do 
-	User.create!(email: Faker::Internet.email, first_name: Faker::Name.first_name, password: "password", password_confirmation: "password")
+	@user = User.create!(email: Faker::Internet.email, first_name: Faker::Name.first_name, password: "password", password_confirmation: "password")
+	Cart.create!(user_id: @user.id)
 end
 puts "users créés"
-
-5.times do 
-	Cart.create!(user_id: User.all.sample.id)
-end
 puts "paniers créés"
+
 
 5.times do 
 	Order.create!(user_id: User.all.sample.id)
