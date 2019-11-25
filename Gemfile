@@ -23,6 +23,7 @@ gem 'rspec'
 gem 'pry'
 gem 'rubocop', '~> 0.57.2'
 gem 'dotenv'
+gem 'database_cleaner'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -64,7 +65,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
-  gem 'database_cleaner'
+  #gem 'database_cleaner'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
