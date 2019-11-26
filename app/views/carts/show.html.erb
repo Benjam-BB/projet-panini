@@ -1,5 +1,5 @@
 <% @items.each do |item| %>
-<%= item.title%> <%= item.price%> <%= link_to "En fait j'en veux plus", join_table_carts_item_path(JoinTableCartsItem.find_by(item_id:item.id).id), method: :delete %>
+<%= item.title%> <%= item.price%> <%= link_to "En fait j'en veux plus", join_table_carts_item_path(JoinTableCartsItem.find_by(item_id:item.id, cart_id:@cart.id).id), method: :delete %>
 </br>
 <%end%>
 

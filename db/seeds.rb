@@ -30,7 +30,7 @@ puts "produits créés"
 	end
 end
 puts "users créés"
-puts "paniers créés"
+puts "paniers créés et remplis"
 
 
 5.times do 
@@ -45,4 +45,4 @@ end
 10.times do 
 	JoinTableCartsItem.create!(item_id: Item.all.sample.id, cart_id: Cart.all.sample.id)
 end
-puts "commandes et paniers remplis"
+puts "commandes remplies"
