@@ -1,6 +1,6 @@
  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">
-            <img src="http://placehold.it/150x50?text=Logo" alt="">
+            <%=image_tag("panini_vintage_logo.png", :class => "logo")%>
           </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,7 +10,7 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="<%=root_path%>">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Catégories</a>
@@ -24,24 +24,24 @@
                     Se connecter/S'inscrire
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" <%= link_to "Se connecter", new_user_session_path%>
-                    <a class="dropdown-item" <%= link_to "S'inscrire", new_user_registration_path%>
+                    <a class="dropdown-item" href="<%= new_user_session_path%>">Se connecter</a>
+                    <a class="dropdown-item" href="<%= new_user_registration_path%>"> S'inscrire</a>
                 </div>
               <%else%>
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Se connecter/S'inscrire
+                  <%=current_user.first_name%>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" <%= link_to "Mon Profil", user_path(current_user.id)%>
-                  <a class="dropdown-item" <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %>
+                  <a class="dropdown-item" href="<%= user_path(current_user.id)%>">Mon Profil</a>
+                  <%= link_to "Se Déconnecter", destroy_user_session_path, method: :delete, class: 'dropdown-item'%>
               <%end%>
             </li>
           <li class="nav-item">
             <%if user_signed_in? == true%>
-              <a class="nav-link" <%= link_to "Mon Panier", user_cart_path(current_user.id)%>
+              <a class="nav-link" href="<%=user_cart_path(current_user.id)%>">Mon Panier</a>
             <%else%>
-              <a class="nav-link" <%= link_to "Mon Panier", new_user_session_path%>
+              <a class="nav-link" href="<%=new_user_session_path%>">Mon Panier</a>
             <%end%>
           </li>
         </ul>

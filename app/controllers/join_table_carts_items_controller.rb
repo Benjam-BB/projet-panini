@@ -1,4 +1,6 @@
 class JoinTableCartsItemsController < ApplicationController
+	before_action :existing_cart
+	
 	def create
 	end
 	def destroy
