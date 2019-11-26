@@ -23,6 +23,7 @@ Valider votre panier : (bouton "passer commander" à faire au lieu de ce truc mo
           data-email="<%= current_user.email %>"
           data-description="Merci de renseigner les informations ci-dessous"
           data-amount="<%= @cart.total_price*100 %>"
+          data-currency="eur"
           data-locale="auto"></script>
 <% end %>
 
