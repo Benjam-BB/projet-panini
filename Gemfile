@@ -17,12 +17,12 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'mini_racer', platforms: :ruby
 gem 'faker'
 gem "table_print"
-gem 'stripe'
+#gem 'stripe'
 gem 'devise'
 gem 'rspec'
 gem 'pry'
 gem 'rubocop', '~> 0.57.2'
-gem 'dotenv'
+gem 'dotenv-rails'
 gem 'database_cleaner'
 
 # Use CoffeeScript for .coffee assets and views
@@ -70,3 +70,4 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'stripe'
