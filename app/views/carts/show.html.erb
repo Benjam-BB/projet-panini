@@ -1,7 +1,24 @@
-<% @items.each do |item| %>
-<%= item.title%> <%= item.price%> <%= link_to "En fait j'en veux plus", join_table_carts_item_path(JoinTableCartsItem.find_by(item_id:item.id, cart_id:@cart.id).id), method: :delete %>
-</br>
-<%end%>
-
-<p> Total : <%=@cart.total_price%> </p>
+<%= render "layouts/small_banner"%>
+<div class="container">
+    <ul class="list-unstyled m-3">
+    <% @items.each do |item| %>
+    <li class="media border-top border-right border-left">
+    <div class=" p-2">
+                <img class="" src="<%=item.image_url%>" alt="Generic placeholder image" style="height: 80px">
+    </div>
+        <div class="media-body p-2 border-left">
+                <h5><%= item.title%></h5>
+            <div class="d-flex flex-row justify-content-end">  
+                <%= link_to "Retirer du panier", join_table_carts_item_path(JoinTableCartsItem.find_by(item_id:item.id, cart_id:@cart.id).id), method: :delete, class: 'btn btn-primary' %>
+            </div>
+                <p><%= item.price%> €</p>
+        </div>
+    </li>
+    <%end%>
+    </ul>
+    <div class="d-flex flex-row justify-content-around mt-2">
+        <p> Total : <%=@cart.total_price%> €</p>
+        <button class="btn btn-secondary">Valider</button>
+    </div>
+</div>
 
