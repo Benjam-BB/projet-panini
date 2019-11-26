@@ -24,7 +24,10 @@ puts "produits créés"
 
 20.times do 
 	@user = User.create!(email: Faker::Internet.email, first_name: Faker::Name.first_name, password: "password", password_confirmation: "password")
-	Cart.create!(user_id: @user.id)
+	@cart=Cart.create!(user_id: @user.id)
+	5.times do 
+		JoinTableCartsItem.create!(item_id: Item.all.sample.id, cart_id: @cart.id)
+	end
 end
 puts "users créés"
 puts "paniers créés"

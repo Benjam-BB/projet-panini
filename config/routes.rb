@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
   devise_for :users 
-  resources :users, only: [] do
+  resources :users, only: [:show] do
      resource :cart, except: [:index]
      resource :orders, only: [:show, :new, :create]
   end
+  resources :join_table_carts_items, only: [:create, :destroy]
   resources :items, only: [:show, :index]
   root to: 'items#index'
 
