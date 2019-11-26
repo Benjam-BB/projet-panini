@@ -1,0 +1,7 @@
+voici le recap de vos commandes
+<ul>
+	<% @orders.each do |order| %>
+
+		<li>Commande <%= order %> pour <%= order.total_price%> €</li>
+	<%end%>
+</ul>
