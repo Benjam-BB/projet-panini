@@ -1,7 +1,8 @@
 <% @items.each do |item| %>
-<%= item.title%> <%= item.price%> <%= link_to "En fait j'en veux plus", join_table_carts_item_path(JoinTableCartsItem.find_by(item_id:item.id, cart_id:@cart.id).id), method: :delete %>
-</br>
+	<%= item.title%> <%= item.price%> <%= link_to "En fait j'en veux plus", join_table_carts_item_path(JoinTableCartsItem.find_by(item_id:item.id, cart_id:@cart.id).id), method: :delete %>
+	</br>
 <%end%>
 
 <p> Total : <%=@cart.total_price%> </p>
 
+<%= link_to "Valider le panier", user_orders_path(), method: :post %>
