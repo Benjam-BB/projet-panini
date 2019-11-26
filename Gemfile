@@ -22,7 +22,7 @@ gem 'devise'
 gem 'rspec'
 gem 'pry'
 gem 'rubocop', '~> 0.57.2'
-gem 'dotenv'
+gem 'dotenv-rails'
 gem 'database_cleaner'
 
 # Use CoffeeScript for .coffee assets and views
