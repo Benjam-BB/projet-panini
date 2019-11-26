@@ -1,4 +1,4 @@
-<header class="bg-dark">
+<header class="bg-dark my-5">
   <div class="container py-5">
     <div class="row py-5">
       <h1 class="text-light display-4">Mon Profil</h1>
@@ -6,23 +6,98 @@
   </div>
 </header>
 
-<div class="row">
-  <div class="col-sm-4">
-    Nom: Michel
-  </div>
-  <div class="col-sm-4">
-    Prénom: Michel
+<div class="container pt-5">
+  <div class="row">
+    <div class="col-sm-4">
+      Nom :
+      Michel
+    </div>
+    <div class="col-sm-4">
+      Prénom :
+      Michel
+    </div>
   </div>
 </div>
 
-<div class="row">
-  <div class="col-sm-4">
-    Email: michel@yopm
+<div class="container pt-5">
+  <div class="row">
+    <div class="col-sm-4">
+      Email :
+      michel@yopm
+    </div>
+    <div class="col-sm-4">
+      Adresse :
+      La Félicita
+    </div>
+    <div class="col-sm-4">
+      <%= link_to 'Modifier mes infos', edit_user_registration_path, class: 'btn btn-lg btn-primary' %>
+    </div>
   </div>
-  <div class="col-sm-4">
-    Adresse: La Félicita
+</div>
+
+<div class="container pt-5">
+
+  <h2 class="py-5">Ma liste en attente</h2>
+
+  <div class="row border no-gutters text-center">
+    <div class="col-md-2 col-5 my-auto"><img src="https://1.bp.blogspot.com/-50XZXr0ULiI/XFa-oQPwZtI/AAAAAAACinM/42-MchyRs9AtQiHdqd3JtRIUYnPc8zfZQCLcBGAs/s1600/2009%2BPanini%2B-%2BPaolo%2BMadlini%2Buna%2Bvita%2Bin%2Brossomero%2B-1992-1993a.jpg" height="200" alt="">
+    </div>
+
+    <div class="col-md-10 col-7 row no-gutters border-left">
+      <div class="col-md-6 m-auto">
+        <h3>Paolo Maldini</h3>
+        12.50€
+      </div>
+      <div class="col-md-6 m-auto">
+        <p>Ajouté le 01/12/19</p>
+      </div>
+    </div>
   </div>
-  <div class="col-sm-4">
-    Nom: Michel
+
+  <div class="row border no-gutters text-center">
+    <div class="col-md-2 col-5 my-auto"><img src="https://1.bp.blogspot.com/-50XZXr0ULiI/XFa-oQPwZtI/AAAAAAACinM/42-MchyRs9AtQiHdqd3JtRIUYnPc8zfZQCLcBGAs/s1600/2009%2BPanini%2B-%2BPaolo%2BMadlini%2Buna%2Bvita%2Bin%2Brossomero%2B-1992-1993a.jpg" height="200" alt="">
+    </div>
+
+    <div class="col-md-10 col-7 row no-gutters border-left">
+      <div class="col-md-6 m-auto">
+        <h3>Paolo Maldini</h3>
+        12.50€
+      </div>
+      <div class="col-md-6 m-auto">
+        <p>Ajouté le 01/12/19</p>
+      </div>
+    </div>
   </div>
+
+  <div class="row mt-5 justify-content-center">
+      <%= link_to "Mon Panier", user_cart_path(current_user.id), class: 'btn btn-lg btn-primary' %>
+  </div>
+
+</div>
+
+<div class="container py-5">
+
+  <h2 class="py-5">Mes Commandes passées</h2>
+
+  <div class="row border no-gutters text-center py-3">
+    <div class="col-md-3 m-auto">Commande N° 12</div>
+    <div class="col-md-3 m-auto">Montant : 15€</div>
+    <div class="col-md-3 m-auto">Date : 12/12/19</div>
+    <div class="col-md-3 m-auto"><%= link_to "Voir Commande", user_cart_path(current_user.id), class: 'btn btn-primary' %></div>
+  </div>
+
+  <div class="row border no-gutters text-center py-3">
+    <div class="col-md-3 m-auto">Commande N° 12</div>
+    <div class="col-md-3 m-auto">Montant : 15€</div>
+    <div class="col-md-3 m-auto">Date : 12/12/19</div>
+    <div class="col-md-3 m-auto"><%= link_to "Voir Commande", user_cart_path(current_user.id), class: 'btn btn-primary' %></div>
+  </div>
+
+  <div class="row border no-gutters text-center py-3">
+    <div class="col-md-3 m-auto">Commande N° 12</div>
+    <div class="col-md-3 m-auto">Montant : 15€</div>
+    <div class="col-md-3 m-auto">Date : 12/12/19</div>
+    <div class="col-md-3 m-auto"><%= link_to "Voir Commande", user_cart_path(current_user.id), class: 'btn btn-primary' %></div>
+  </div>
+
 </div>
