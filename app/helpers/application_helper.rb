@@ -1,5 +1,5 @@
 module ApplicationHelper
-
+  
   def authenticate_user
 		unless current_user
 	    redirect_to new_user_session_path
@@ -24,5 +24,22 @@ module ApplicationHelper
     unless current_user.id == @user.id
   	 redirect_to root_path
     end
+  end
+
+  def bootstrap_class_for_flash(type)
+    case type
+      when 'notice' then "alert-info"
+      when 'success' then "alert-success"
+      when 'error' then "alert-danger"
+      when 'alert' then "alert-warning"
+    end
+  end
+
+  private
+
+  def catch_not_found
+    yield
+  rescue ActiveRecord::RecordNotFound
+    redirect_to root_url, :flash => { :error => "Page non trouvée" }
   end
 end
