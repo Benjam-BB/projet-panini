@@ -4,7 +4,12 @@
 		<% @items.each do |item| %>
 			<div class="col mb-3">
 				<div class="card" style="width: 16rem;">
-					<img src="http://3.bp.blogspot.com/-eQKLPkX27z8/TsuUq5fcwWI/AAAAAAAAUac/C9eNc1Ulh4w/s320/Pel%25C3%25A9+Panini+Br%25C3%25A9sil+Mexico+70.png" class="card-img-top" alt="card-panini">
+					<%if item.panini_image.attached?%>
+						<%= image_tag item.panini_image, alt: 'image panini' %>
+					<%else%>
+						<img src="http://3.bp.blogspot.com/-eQKLPkX27z8/TsuUq5fcwWI/AAAAAAAAUac/C9eNc1Ulh4w/s320/Pel%25C3%25A9+Panini+Br%25C3%25A9sil+Mexico+70.png" class="card-img-top" alt="card-panini">
+					<%end%>
+				
 					<div class="card-body d-flex flex-column align-items-center">
 						<h5 class="card-title"><%=item.title%></h5>
 						<p class="card-text"><%=item.price%> €</p>
