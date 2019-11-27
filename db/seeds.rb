@@ -23,14 +23,14 @@ end
 puts "produits créés"
 
 20.times do 
-	@user = User.create!(email: Faker::Internet.email, first_name: Faker::Name.first_name, password: "password", password_confirmation: "password")
-	@cart=Cart.create!(user_id: @user.id)
+	@fist_name = Faker::Name.first_name
+	@user = User.create!(first_name: @fist_name, email: "#{@fist_name}@yopmail.com",  password: "password", password_confirmation: "password")
 	5.times do 
-		JoinTableCartsItem.create!(item_id: Item.all.sample.id, cart_id: @cart.id)
+		JoinTableCartsItem.create!(item_id: Item.all.sample.id, cart_id: Cart.find_by(user_id:@user.id).id)
 	end
 end
 puts "users créés"
-puts "paniers créés et remplis"
+puts "paniers remplis"
 
 
 5.times do 
