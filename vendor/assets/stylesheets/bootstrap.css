@@ -10674,11 +10674,11 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .alert-success, .alert-success > th, .alert-success > td {
-  background-color: #93C54B;
+  background-color: #B0C49E;
 }
 
 .alert-info, .alert-info > th, .alert-info > td {
-  background-color: #29ABE0;
+  background-color: #9EC3C4;
 }
 
 .alert-danger, .alert-danger > th, .alert-danger > td {
@@ -10686,7 +10686,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .alert-warning, .alert-warning > th, .alert-warning > td {
-  background-color: #F47C3C;
+  background-color: #D66D35;
 }
 
 .alert-dark, .alert-dark > th, .alert-dark > td {
