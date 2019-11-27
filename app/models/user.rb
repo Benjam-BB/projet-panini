@@ -6,9 +6,11 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true, format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, message: "email adress please" }
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
   after_create :welcome_send
   after_create :create_cart
   after_destroy :destroy_cart
+
 
   def welcome_send
     UserMailer.welcome_email(self).deliver_now
