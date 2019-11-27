@@ -1,0 +1,13 @@
+Bonjour <%=@user.first_name%> !
+
+==========================================================
+ 
+Nous te confirmons ta commande <%=@order%> qui contient les éléments suivants :
+
+<%@order.items.map {  |item| %>
+<%=	item.title %> <%=	item.price %>
+<%}%>
+
+Pour accéder à ton espace client, connecte-toi via : <%=@url%>.
+ 
+Merci à nouveau pour ta confiance et a très vite sur panini_project !

@@ -1,0 +1,2 @@
+module PaniniImagesHelper
+end
