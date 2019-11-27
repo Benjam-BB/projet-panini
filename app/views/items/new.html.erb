@@ -1,0 +1,24 @@
+<h1>Créer un nouvel item</h1>
+<div class="d-flex flex-row m-5" >
+	<div class="container d-flex flex-column justify-content-between p-5"  style="border: solid 2px;">
+		<%= form_tag items_path, method: :post do %>
+        <%= label_tag 'Titre' %>
+        <div class="form-label-group">
+          <%= text_field_tag 'title', value = params[:title] %>
+		</div>
+		<%= label_tag 'Description' %>
+	    <div class="form-label-group">
+	      <%= text_area_tag 'description', value = params[:description], class: "form-label-group"%>
+	    </div>
+		<%= label_tag 'Prix (€)' %>
+        <div class="form-label-group">
+          <%= text_field_tag 'price', value = params[:price] %>
+		</div>
+		<div class="d-flex flex-row justify-content-between ">
+			<div class="pt-2">
+				<%= submit_tag "Créer la carte", :class => "btn btn-primary" %>
+            </div>  
+		</div>
+		<% end %>
+	</div>
+</div>
