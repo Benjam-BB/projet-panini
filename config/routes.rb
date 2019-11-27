@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   get 'users/show'
   get 'users/edit'
   get 'users/update'
-  devise_for :users 
-  resources :users, only: [:show] do
+  devise_for :users
+  resources :users, only: [:show, :edit, :update] do
      resource :cart, except: [:index]
      resources :orders, only: [:show, :new, :create, :index]
   end
