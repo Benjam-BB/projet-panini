@@ -1,17 +1,18 @@
 class ItemsController < ApplicationController
+	before_action :authenticate_user, except: [:index, :show]
+
   def new
   end
   def create
   	@item=Item.new(title: params[:title], description: params[:description], price: params[:price])
   	if @item.save
-  		flash[:sucess] = 'La carte a été créée - ajoutez une photo'
-  		render :edit
+  		flash[:success] = 'La carte a été créée - ajoutez une image'
+  		redirect_to edit_item_path(@item.id)
   	else
   		flash[:error] = @item.errors.full_messages
   		render :new
   	end
   end
-
   def index
   	@items = Item.all
   end
