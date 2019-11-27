@@ -1,13 +1,13 @@
 <%= render "layouts/small_banner"%>
 <div class="d-flex flex-row m-5" >
-	<div class="container d-flex justify-content-center p-5" style="border: solid 2px;">
+	<div class="container d-flex justify-content-center p-5 border">
 		<%if @item.panini_image.attached?%>
 			<%= image_tag @item.panini_image, alt: 'image panini' %>
 		<%else%>
-			<p>=== Il n'y a pas encore de 'panini_image' lié à cet item ===</p>
+			<img src="<%=@item.image_url%>" alt="image panini">
 		<%end%>
 	</div>
-	<div class="container d-flex flex-column justify-content-between p-5"  style="border: solid 2px;">
+	<div class="container d-flex flex-column justify-content-between p-5 border-right border-top border-bottom">
 		<h1 class="d-flex align-self-start"><strong>Titre :</strong> <%= @item.title %> </h1>
 	
 		<div class=""> <strong>Description :</strong> <%= @item.description %> </div>
