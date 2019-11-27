@@ -4,7 +4,7 @@ Rails.application.routes.draw do
      resource :cart, except: [:index]
      resources :orders, only: [:show, :new, :create, :index]
   end
-  resources :items, only: [:show, :index, :edit] do
+  resources :items do
     resources :join_table_carts_items, only: [:create, :destroy]
     resources :panini_images, only: [:create, :edit, :update]
   end
