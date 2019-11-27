@@ -48,8 +48,10 @@
             </li>
           </ul>
         </div>
+        <li class="nav-item text-uppercase px-3">
+          <%= link_to "Mon Panier", user_cart_path(current_user.id), class: 'nav-link' %>
+        </li>
       <% end %>
-
   </ul>
 </div>
 </nav>
