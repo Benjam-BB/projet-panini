@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   get 'users/show'
   get 'users/edit'
   get 'users/update'
-  devise_for :users 
+  devise_for :users
   resources :users, only: [:show] do
-     resource :cart, except: [:index]
+     resource :cart,:path => 'mon_panier', except: [:index]
      resources :orders, only: [:show, :new, :create, :index]
   end
   resources :join_table_carts_items, only: [:create, :destroy]
