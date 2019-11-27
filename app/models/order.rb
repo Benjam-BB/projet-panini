@@ -12,4 +12,3 @@ class Order < ApplicationRecord
     	AdminMailer.order_confirmation_email(User.find(self.user_id),self).deliver_now
   	end
 end
-

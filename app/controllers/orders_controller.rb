@@ -5,13 +5,14 @@ class OrdersController < ApplicationController
 
   def index
   	@user = current_user
-  	@orders = @user.orders 
+  	@orders = @user.orders
   end
 
   def show
   	@user = current_user
-	@order = Order.find(params[:id])
-	@items = @order.items
+	  @order = Order.find(params[:id])
+  	@items = @order.items
+    @page_title = "Commande N° : " + @order.id.to_s
   end
 
   def new
@@ -38,7 +39,7 @@ class OrdersController < ApplicationController
 	  @user.cart.items.destroy_all #empty the items included in the cart
 	  flash[:notice] = "Commande validée"
 	  redirect_to user_order_path(user_id: current_user.id, id: @order.id)
-	  	
+
       rescue Stripe::CardError => e
         flash[:error] = e.message
         redirect_to user_cart_path()

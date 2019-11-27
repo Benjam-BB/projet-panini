@@ -1,10 +1,4 @@
-<header class="bg-dark my-5">
-  <div class="container py-5">
-    <div class="row py-5">
-      <h1 class="text-light display-4">Mon Profil</h1>
-    </div>
-  </div>
-</header>
+<%= render "layouts/small_banner"%>
 
 <div class="container pt-5">
   <div class="row">
@@ -43,21 +37,6 @@
 
   <h2 class="py-5">Ma liste en attente</h2>
 
-  <div class="row border no-gutters text-center">
-    <div class="col-md-2 col-5 my-auto"><img src="https://1.bp.blogspot.com/-50XZXr0ULiI/XFa-oQPwZtI/AAAAAAACinM/42-MchyRs9AtQiHdqd3JtRIUYnPc8zfZQCLcBGAs/s1600/2009%2BPanini%2B-%2BPaolo%2BMadlini%2Buna%2Bvita%2Bin%2Brossomero%2B-1992-1993a.jpg" height="200" alt="">
-    </div>
-
-    <div class="col-md-10 col-7 row no-gutters border-left">
-      <div class="col-md-6 m-auto">
-        <h3>Paolo Maldini</h3>
-        12.50€
-      </div>
-      <div class="col-md-6 m-auto">
-        <p>Ajouté le 01/12/19</p>
-      </div>
-    </div>
-  </div>
-
 <% User.find(current_user.id).cart.items.each do |item| %>
 
 <div class="row border no-gutters text-center">
@@ -87,25 +66,15 @@
 
   <h2 class="py-5">Mes Commandes passées</h2>
 
-  <div class="row border no-gutters text-center py-3">
-    <div class="col-md-3 m-auto">Commande N° 12</div>
-    <div class="col-md-3 m-auto">Montant : 15€</div>
-    <div class="col-md-3 m-auto">Date : 12/12/19</div>
-    <div class="col-md-3 m-auto"><%= link_to "Voir Commande", user_order_path(current_user.id), class: 'btn btn-primary' %></div>
-  </div>
+  <% @orders.each do |order| %>
 
   <div class="row border no-gutters text-center py-3">
-    <div class="col-md-3 m-auto">Commande N° 12</div>
-    <div class="col-md-3 m-auto">Montant : 15€</div>
-    <div class="col-md-3 m-auto">Date : 12/12/19</div>
-    <div class="col-md-3 m-auto"><%= link_to "Voir Commande", user_order_path(current_user.id), class: 'btn btn-primary' %></div>
+    <div class="col-md-3 m-auto">N° Commande : <%= order.id %></div>
+    <div class="col-md-3 m-auto">Montant : <%= order.total_price%> €</div>
+    <div class="col-md-3 m-auto">Date : <%= order.created_at.strftime('%d/%m/%Y')%></div>
+    <div class="col-md-3 m-auto"><%= link_to "Voir Commande", user_order_path(:user_id => current_user.id, :id => order.id), class: 'btn btn-primary' %></div>
   </div>
 
-  <div class="row border no-gutters text-center py-3">
-    <div class="col-md-3 m-auto">Commande N° 12</div>
-    <div class="col-md-3 m-auto">Montant : 15€</div>
-    <div class="col-md-3 m-auto">Date : 12/12/19</div>
-    <div class="col-md-3 m-auto"><%= link_to "Voir Commande", user_order_path(current_user.id), class: 'btn btn-primary' %></div>
-  </div>
+  <% end %>
 
 </div>

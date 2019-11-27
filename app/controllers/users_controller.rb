@@ -1,14 +1,17 @@
 class UsersController < ApplicationController
-  
+
   before_action :authenticate_user
   before_action :authenticate_current_user
 
   def show
     @user = User.find(params[:id])
+    @orders = current_user.orders
+    @page_title = 'Mon Profil'
   end
 
   def edit
     @user = User.find(params[:id])
+    @page_title = 'Éditer mon profil'
   end
 
   def update
