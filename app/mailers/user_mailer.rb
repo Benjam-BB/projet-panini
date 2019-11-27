@@ -9,4 +9,12 @@ class UserMailer < ApplicationMailer
     # c'est cet appel à mail() qui permet d'envoyer l’e-mail en définissant destinataire et sujet.
     mail(to: @user.email, subject: 'Bienvenue chez nous !') 
   end
+
+  def order_confirmation_email(user,order)
+    @user = user
+    @order = order
+    @url  = 'https://panini-project.herokuapp.com' 
+    mail(to: @user.email, subject: "Confirmation de votre commande #{@order}") 
+  end
+
 end

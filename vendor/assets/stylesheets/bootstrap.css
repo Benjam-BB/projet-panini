@@ -76,6 +76,10 @@ body {
   outline: 0 !important;
 }
 
+.stripe-button-el {
+   display: none !important; 
+  }
+   
 hr {
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
