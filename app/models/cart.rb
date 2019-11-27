@@ -7,5 +7,9 @@ class Cart < ApplicationRecord
 	def total_price
 		self.items.to_a.map{|item| item.price }.inject(0, :+)
 	end
-	
+
+	def is_empty?
+    self.items.empty?
+end
+
 end
