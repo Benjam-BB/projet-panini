@@ -1,0 +1,11 @@
+Bonjour Admin !
+
+==========================================================
+ 
+Nous t'informons que la commande <%=@order%> a été passée par <%=@user.first_name%> et contient les items suivants:
+
+<%@order.items.map {  |item| %>
+<%=	item.title %> <%=	item.price %>
+<%}%>
+ 
+Bravo encore une nouvelle vente! On va devenir riche!
