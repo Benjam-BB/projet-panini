@@ -1,11 +1,19 @@
-<%= render "layouts/small_banner"%>
-<div class="d-flex flex-row m-5" >
-	<div class="container d-flex justify-content-center p-5" style="border: solid 2px;">
+ <h1>Editer l'item n°<%=@item.id%></h1>
+ <div class="d-flex flex-row m-5" >
+	<div class="container d-flex flex-column justify-content-center p-5" style="border: solid 2px;">
 		<%if @item.panini_image.attached?%>
 			<%= image_tag @item.panini_image, alt: 'image panini' %>
 		<%else%>
 			<p>=== Il n'y a pas encore de 'panini_image' lié à cet item ===</p>
 		<%end%>
+        <br/>
+        <div>
+        <h3>Changer d'image de ce panini ?</h3>
+            <%= form_tag item_panini_images_path(@item), multipart: true do %>
+            <%= file_field_tag :panini_image %>
+            <%= submit_tag "mettre à jour" %>
+            <% end %>
+        </div>
 	</div>
 	<div class="container d-flex flex-column justify-content-between p-5"  style="border: solid 2px;">
 		<h1 class="d-flex align-self-start"><strong>Titre :</strong> <%= @item.title %> </h1>
