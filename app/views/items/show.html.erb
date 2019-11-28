@@ -2,31 +2,32 @@
 
 <div class="container-fluid">
 	<div class="row">
-	<div class="col-md-6 border">
-		<div class="text-center">
-			<%if @item.panini_image.attached?%>
-				<%= image_tag @item.panini_image, alt: 'image panini', class: 'h-80' %>
-			<%else%>
-				<img src="<%=@item.image_url%>" alt="image panini" class="mw-100">
-			<%end%>
+		<div class="col-md-6 border">
+			<div class="text-center">
+				<%if @item.panini_image.attached?%>
+					<%= image_tag @item.panini_image, alt: 'image panini', class: 'h-80' %>
+				<%else%>
+					<img src="<%=@item.image_url%>" alt="image panini" class="mw-100">
+				<%end%>
+			</div>
 		</div>
-
-	</div>
 	<div class="col-md-6 border p-md-5 justify-content-between flex-direction: column">
-		<div class="row h-25 p-5">
+		<div class="h-20 p-5">
 			<h1><%= @item.title %></h1>
+			<p> <strong>Position: </strong><%= @item.position %></p>
 		</div>
-		<div class="row h-50 p-5">
-			<p>Decsription :
+		<div class="row p-5">
+			<p><strong> Decsription :</strong>
 				<%= @item.description %></p>
 		</div>
-		<div class="row h-20 p-5">
+		<div class="row h-15 p-5">
 			<div class="col-md-6 text-center p-4">
 				 <%= @item.price %> €
 			 </div>
 			<div class="col-md-6 text-center p-3">	<%= link_to 'Ajouter au panier', item_join_table_carts_items_path(@item.id), method: :post, :class => "btn btn-lg btn-primary"  %>
-</div>
+			</div>
 		</div>
 	</div>
 	</div>
+	
 </div>
