@@ -9,10 +9,10 @@
       Nous t'informons que la commande <%=@order%> a été passée par <%=@user.first_name%> et contient les items suivants:
 
 
-            Integrer la partial avec le detail de la commande
+            <%= render "user_mailer/order"%>
 
     </p>
     <p>
-     Bravo encore une nouvelle vente! On va devenir riche!</p>
+     Bravo encore une nouvelle vente ! On va devenir riche !</p>
   </body>
 </html>
