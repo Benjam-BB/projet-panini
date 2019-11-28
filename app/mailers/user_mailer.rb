@@ -15,17 +15,17 @@ class UserMailer < ApplicationMailer
     @order = order
     @items = @order.items
 
-    @items.each do |o|
-      if o.panini_image.attached?
-        @image = o.panini_image
-      end
+    # @items.each do |o|
+    #  if o.panini_image.attached?
+    #    @image = o.panini_image
+    #  end
     
 
-      if o.panini_image.attached?
+     # if o.panini_image.attached?
         # Pour les images que l'admin a mis en ligne
-        attachments.inline["#{@image}"] = File.read(@image.blob.service.send(:path_for, @image.key))
-      end
-    end
+     #   attachments.inline["#{@image}"] = File.read(@image.blob.service.send(:path_for, @image.key))
+     # end
+    #end
 
     @url  = 'https://panini-project.herokuapp.com' 
     mail(to: @user.email, subject: "Confirmation de votre commande #{@order}") 
