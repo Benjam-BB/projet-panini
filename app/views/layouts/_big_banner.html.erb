@@ -1,10 +1,18 @@
+<head>
+  <script src="https://kit.fontawesome.com/64ad8e677e.js" crossorigin="anonymous"></script>
+</head>
 <div class="jumbotron mb-5" id="big-banner">
+
   <h1 class="display-4">Bienvenue chez Panini Vintage</h1>
   <p class="lead">Les meilleures cartes panini vintage, séléctionnées avec amours
    par nos chineurs.</p>
   <hr class="my-4">
   <p>De Cantona à Pelé en passant par l'unique Christophe Jallet, chez Panini Vintage nous vous proposons uniquement la crème de la crème du panini !</p>
-  <p class="lead">
-    <div class="btn btn-secondary btn-lg" role="button"><%= link_to "Chiner les meilleurs cartes", root_path(anchor: 'chineur') %></div>
-  </p>
+  <div class="d-flex justify-content-center align-items-baseline">
+  <%= link_to root_path(anchor: 'chineur') do %>
+  <span style="color: #D4AF37;">
+  <i class="fas fa-angle-double-down fa-3x"></i>
+  </span>
+  <% end %>
+  </div>
 </div>

@@ -5458,6 +5458,11 @@ a.badge-dark:focus, a.badge-dark.focus {
   border-radius: 0;
 }
 
+.arrow{
+  width: 20pw; 
+  color: #fff; 
+}
+
 #jumbotron1{
   background: linear-gradient(110deg,rgba(0, 0, 0, 0.5),rgba(0,0,0, 0.5) 80%), url('https://i.pinimg.com/564x/cc/8d/6b/cc8d6baa60f0102444f9bde4c9b99c11.jpg');
   background-position: bottom 10px right 20px;

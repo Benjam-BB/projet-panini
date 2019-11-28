@@ -1,7 +1,9 @@
 <% @items.each do |item| %>
 
 <div class="row border no-gutters text-center">
-  <div class="col-md-2 col-5 my-auto"><img src="<%= item.image_url %>" height="200" alt="">
+        <%if item.panini_image.attached?%>
+					<%= image_tag item.panini_image, alt: 'image panini', class: 'h-80' %>
+				<%end%>  
   </div>
 
   <div class="col-md-10 col-7 row no-gutters border-left">
