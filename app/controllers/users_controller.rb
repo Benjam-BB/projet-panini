@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @cart = Cart.find_by(user_id:@user.id)
     @orders = current_user.orders
     @page_title = 'Mon Profil'
   end
