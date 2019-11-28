@@ -8,7 +8,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  #after_create :welcome_send
+  after_create :welcome_send
   after_create :create_cart
   after_destroy :destroy_cart
 
