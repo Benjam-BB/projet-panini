@@ -1,10 +1,10 @@
-<%if current_user%>
-	<% if current_user.admin? %>
+<%if current_user && current_user.admin? %>
 		<%= render "layouts/welcome_admin"%>
-	<%else%>
+<%else%>
+		<%= render "layouts/big_banner"%>
+		<div id="chineur">
 		<%= render "items_list"%>
-	<%end%>
-<% else %>
-	<%= render "items_list"%>
+		</div>
 <%end%>
+
 

@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
   def new
   end
   def create
-  	@item=Item.new(title: params[:title], description: params[:description], price: params[:price].round(2))
+  	@item=Item.new(title: params[:title], description: params[:description], price: params[:price].round(2), position: params[:position])
   	if @item.save
   		flash[:success] = 'La carte a été créée - ajoutez une image'
   		redirect_to edit_item_path(@item.id)
@@ -32,7 +32,7 @@ class ItemsController < ApplicationController
 
   def update
   	@item = Item.find(params[:id])
-  	if @item.update(title: params[:title], description: params[:description], price: params[:price].round(2))
+  	if @item.update(title: params[:title], description: params[:description], price: params[:price], position: params[:position])
   		flash[:success] = 'La carte a été mise à jour'
         redirect_to @item
     else
