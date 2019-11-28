@@ -1,7 +1,14 @@
 <%= render 'layouts/small_banner'%>
 
 <div class="container pt-5">
-	<p>Commandé le <%= @order.created_at.strftime('%d/%m/%Y')%>
+
+	<div class="row no-gutters">
+
+		<div class="amount border p-3 col-md-3 text-center">
+			Commandé le <%= @order.created_at.strftime('%d/%m/%Y')%>
+		</div>
+	</div>
+
 	<% @items.each do |item| %>
 	<div class="row border no-gutters text-center">
     <div class="col-md-2 col-5 my-auto"><img src="<%= item.image_url %>" height="200" alt="">
