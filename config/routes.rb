@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:show, :edit, :update] do
      resource :cart, except: [:index]
-     resources :orders, only: [:show, :new, :create, :index]
+     resources :orders, only: [:show, :new, :create]
   end
   resources :items do
     resources :join_table_carts_items, only: [:create, :destroy]

@@ -20,13 +20,18 @@
 			<p>Decsription :
 				<%= @item.description %></p>
 		</div>
-		<div class="row h-20 p-5">
+		<div class="row h-20 pb-0 pt-5 px-5">
 			<div class="col-md-6 text-center p-4">
 				 <%= @item.price %> €
-			 </div>
+			</div>
 			<div class="col-md-6 text-center p-3">	<%= link_to 'Ajouter au panier', item_join_table_carts_items_path(@item.id), method: :post, :class => "btn btn-lg btn-primary"  %>
-</div>
+			</div>
 		</div>
+		<% if current_user && current_user.admin?%>
+		<div class="row h-20 ml-5 pt-2 justify-content-center">
+			<a href="<%=edit_item_path(@item.id)%>" class=" btn btn-secondary m-1">MODIFIER LA CARTE</a>
+		</div>
+		<%end%>
 	</div>
 	</div>
 </div>
