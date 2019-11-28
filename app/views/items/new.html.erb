@@ -10,6 +10,10 @@
 	    <div class="form-label-group">
 	      <%= text_area_tag 'description', value = params[:description], class: "form-label-group"%>
 	    </div>
+		<%= label_tag 'Position' %>
+        <div class="form-label-group">
+          <%= select_tag "position", raw("<option>Attaquant</option><option>Milieu</option><option>Défenseur</option><option>Gardien</option>"), disabled: false %>
+		</div>
 		<%= label_tag 'Prix (€)' %>
         <div class="form-label-group">
           <%= text_field_tag 'price', value = params[:price] %>
