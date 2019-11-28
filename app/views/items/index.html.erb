@@ -2,9 +2,13 @@
 	<% if current_user.admin? %>
 		<%= render "layouts/welcome_admin"%>
 	<%else%>
+		<div id="chineur">
 		<%= render "items_list"%>
+		</div>
 	<%end%>
 <% else %>
-	<%= render "items_list"%>
+		<div id="chineur">
+		<%= render "items_list"%>
+		</div>
 <%end%>
 
