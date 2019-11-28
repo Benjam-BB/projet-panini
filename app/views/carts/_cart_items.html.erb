@@ -1,15 +1,15 @@
 <% @items.each do |item| %>
 
 <div class="row border no-gutters text-center">
+  <div class="col-md-2 col-5 my-auto border-right">
         <%if item.panini_image.attached?%>
-					<%= image_tag item.panini_image, alt: 'image panini', class: 'h-80' %>
-				<%end%>  
+					<%= image_tag item.panini_image, alt: 'image panini', class: 'h-50' %>
+				<%end%>
   </div>
-
-  <div class="col-md-10 col-7 row no-gutters border-left">
+  <div class="col-md-10 col-7 row no-gutters ">
     <div class="col-md-6 m-auto">
       <h3><%= item.title %></h3>
-      <%= item.price %>
+      <%= item.price %> €
     </div>
     <div class="col-md-6 m-auto">
       <%= link_to "Retirer du panier", item_join_table_carts_item_path(item_id: item.id, id: JoinTableCartsItem.find_by(item_id:item.id, cart_id:@cart.id).id), method: :delete, class: 'btn btn-primary' %>
