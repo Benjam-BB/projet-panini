@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 	include ApplicationHelper
-	around_action :catch_not_found
+	#around_action :catch_not_found
 	before_action :configure_devise_parameters, if: :devise_controller?
 
 	def configure_devise_parameters
