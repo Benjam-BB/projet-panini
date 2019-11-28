@@ -17,6 +17,9 @@ DatabaseCleaner.clean
 
 puts "tout est détruit"
 
+@admin = User.create!(first_name: "admin", email: "admin_panini@yopmail.com",  password: "password", password_confirmation: "password", admin: true)
+puts "admin créé"
+
 20.times do 
 	Item.create!(title: Faker::Name.name, description: Faker::Lorem.sentence, price: Faker::Number.decimal(l_digits: 2), image_url: ["https://static.fnac-static.com/multimedia/Images/FR/MDM/b9/73/86/8811449/1541-2/tsp20190111171521/Boite-en-metal-a-13-pochettes-Panini-Foot-2018-2019.jpg","https://images-na.ssl-images-amazon.com/images/I/91HkRXIakRL._SY355_.jpg","https://www.cdiscount.com/pdt2/7/5/5/1/700x700/auc9002032591755/rw/panini-adrenalyn-xl-fifa-365-2019-cristiano-rona.jpg"].sample)
 end

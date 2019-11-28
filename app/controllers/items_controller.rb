@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
 	before_action :authenticate_user, except: [:index, :show]
+  before_action :authenticate_admin, except: [:index, :show]
 
   def new
   end
@@ -14,6 +15,10 @@ class ItemsController < ApplicationController
   	end
   end
   def index
+    @carts = Cart.all
+    @orders = Order.all
+    @user = current_user
+    @users = User.all
   	@items = Item.all
   end
 

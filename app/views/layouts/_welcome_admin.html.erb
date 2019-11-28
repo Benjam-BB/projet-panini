@@ -1,0 +1,92 @@
+<header class="bg-dark my-5">
+  <div class="container py-5">
+    <div class="row py-5">
+      <h1 class="text-light display-4">Admin Dashboard
+      </h1>
+    </div>
+  </div>
+</header>
+
+
+<div class="container pt-5">
+<h2 class="py-5">Profil Admin</h2>
+  <div class="row">
+    <div class="col-sm-4">
+      Nom :
+      <%= @user.last_name %>
+    </div>
+    <div class="col-sm-4">
+      Prénom :
+      <%= @user.first_name %>
+    </div>
+    <div class="col-sm-4">
+      Email :
+      <%= @user.email %>
+    </div>
+  </div>
+</div>
+
+<div class="container pt-5">
+  <div class="row">
+    <div class="col-sm-4">
+      <%= link_to 'Modifier compte admin', edit_user_path(@user.id), class: 'btn btn-lg btn-primary' %>
+    </div>
+  </div>
+</div>
+
+<div class="container pt-5">
+
+  <h2 class="py-5">Ajouter des items</h2>
+    <div class="row">
+    <div class="col-sm-4">
+      <%= link_to 'Ajouter un item', new_item_path, class: 'btn btn-lg btn-primary' %>
+    </div>
+  </div>
+</div>
+
+<div class="container py-5">
+
+  <h2 class="py-5">Commandes en cours (pas encore validées)</h2>
+  <div class="row border no-gutters text-center font-weight-bold  py-3">
+    <div class="col-md-3 m-auto"># de commandes : <%= @carts.length %></div>
+    <div class="col-md-2 m-auto"># items en panier : <%= @carts.map{|cart| cart.items.size}.sum %></div>
+    <div class="col-md-2 m-auto">Chiffre d'affaires potentiel <%= @carts.map{|cart| cart.total_price}.sum%> €</div>
+    <div class="col-md-3 m-auto">Date du jour : <%= DateTime.now.strftime('%d/%m/%Y')%></div>
+  </div>
+  <br/>
+  <% @carts.each do |cart| %>
+	  <% if cart.total_price > 0 %>
+	  <div class="row border no-gutters text-center py-3">
+	    <div class="col-md-3 m-auto">N° Commande provisoire : <%= cart.id %></div>
+	    <div class="col-md-2 m-auto">N° client : <%= cart.user_id %></div>
+	    <div class="col-md-2 m-auto">Montant : <%= cart.total_price%> €</div>
+	    <div class="col-md-3 m-auto">Création : <%= cart.created_at.strftime('%d/%m/%Y')%></div>
+	  </div>
+	  <%end%>
+  <% end %>
+
+</div>
+<div class="container py-5">
+
+  <h2 class="py-5">Commandes passées</h2>
+  <div class="row border no-gutters text-center font-weight-bold  py-3">
+    <div class="col-md-2 m-auto"># de commandes : <%= @orders.length %></div>
+    <div class="col-md-2 m-auto"># de clients : <%= @orders.map{|order| order.user_id}.uniq.size %></div>
+    <div class="col-md-2 m-auto"># items vendus : <%= @orders.map{|order| order.items.size}.sum %></div>
+    <div class="col-md-2 m-auto">Chiffre d'affaires <%= @orders.map{|order| order.total_price}.sum%> €</div>
+    <div class="col-md-2 m-auto">Date du jour : <%= DateTime.now.strftime('%d/%m/%Y')%></div>
+  </div>
+  <br/>
+  <% @orders.each do |order| %>
+
+  <div class="row border no-gutters text-center py-3">
+    <div class="col-md-3 m-auto">N° Commande : <%= order %></div>
+    <div class="col-md-2 m-auto">N° client : <%= order.user_id %></div>
+    <div class="col-md-2 m-auto">#items : <%= order.items.size %></div>
+    <div class="col-md-2 m-auto">Montant : <%= order.total_price%> €</div>
+    <div class="col-md-2 m-auto">Date : <%= order.created_at.strftime('%d/%m/%Y')%></div>
+  </div>
+
+  <% end %>
+
+</div>
