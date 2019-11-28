@@ -1,24 +1,47 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Voici notre magnifique MVP de site marchand. Nous vous proposons les meilleurs cartes panini au monde et les plus rare. 
 
-Things you may want to cover:
+## Comment ça marche ?
 
-* Ruby version
+#### En Production
+Rdv sur https://panini-project.herokuapp.com/
+Accès admin : 
 
-* System dependencies
+Login : admin_panini@yopmail.com
 
-* Configuration
+mdp : password
 
-* Database creation
+Bon chinage de Panini
 
-* Database initialization
+#### En Local 
 
-* How to run the test suite
+Lance un : 
+```
+git clone https://github.com/Benjam-BB/projet-panini
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Puis un petit 
+```
+bundle Install
+```
 
-* Deployment instructions
+```
+rails db:migrate
+```
 
-* ...
+Et enfin un 
+```
+rails db:seed
+```
+Pour te créer une base de donnée
+
+
+#### L'équipe
+
+Philippe Gatti
+Jordan Pedro
+Hermine De Menthiere
+Benjamin Bertrand
+
+Merci à Raf le super mentor 

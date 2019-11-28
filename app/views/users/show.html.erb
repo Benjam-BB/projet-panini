@@ -50,6 +50,7 @@
     </div>
     <div class="col-md-6 m-auto">
      <%= link_to "Retirer du panier", item_join_table_carts_item_path(item_id: item.id, id: JoinTableCartsItem.find_by(item_id:item.id, cart_id:@cart.id).id), method: :delete, class: 'btn btn-primary' %>
+
     </div>
   </div>
 </div>

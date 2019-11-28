@@ -3,7 +3,8 @@ class AdminMailer < ApplicationMailer
 
 	def order_confirmation_email(user,order)
 	    @user = user
-	    @order = order
+		@order = order
+		@items = @order.items
 	    @url  = 'https://panini-project.herokuapp.com' 
 	    mail(to: "admin_panini@yopmail.com", subject: "Confirmation de la commande #{@order}") 
   	end

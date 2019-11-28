@@ -6,14 +6,11 @@
   <body>
     <h1>Bonjour <%=@user.first_name%> !</h1>
     <p>
-      Nous te confirmons ta commande <%=@order%> qui contient les éléments suivants :
-
-            Integrer la partial avec le detail de la commande
-
-    </p>
+      Nous te confirmons ta commande <%=@order%> qui contient les éléments suivants : </p>
+      <%= render 'order'%>
     <p>
-      Pour accéder à ton espace client, connecte-toi via :<%=@url%>.
+      Pour accéder à ton espace client, connecte-toi via : <%=@url%>.
     </p>
-    <p> Merci à nouveau pour ta confiance et a très vite sur panini_project !</p>
-  </body>
+    <p> Merci à nouveau pour ta confiance et a très vite sur Panini Vintage !</p>
+ </body>
 </html>

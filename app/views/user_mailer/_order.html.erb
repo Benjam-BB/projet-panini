@@ -1,0 +1,29 @@
+<div class="container pt-5">
+	<p>Commandé le <%= @order.created_at.strftime('%d/%m/%Y')%>
+	<% @items.each do |item| %>
+	<div class="row border no-gutters text-center">
+    <div class="col-md-2 col-5 my-auto">
+    <%if item.panini_image.attached?%>
+						<%= image_tag item.panini_image, alt: 'image panini' %>
+					<%else%>
+                        <img src="<%= item.image_url %>" height="200" alt="">
+					<%end%>
+    </div>
+
+    <div class="col-md-10 row no-gutters border-left">
+      <div class="col-md-6 m-auto">
+        <h3><%= item.title%></h3>
+        Prix de la carte : <%= item.price%> €
+      </div>
+    </div>
+  </div>
+	<%end%>
+
+	<div class="row no-gutters justify-content-end mb-5">
+
+		<div class="amount border p-3 col-md-3 text-center">
+			Total : <%= @order.total_price %> €
+		</div>
+	</div>
+
+</div>
