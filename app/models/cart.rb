@@ -4,7 +4,7 @@ class Cart < ApplicationRecord
   has_many :items, through: :join_table_carts_items
 
   def total_price
-    self.items.to_a.map(&:price).inject(0, :+)
+    self.items.to_a.map(&:price).inject(0, :+).round(2)
   end
 
   def is_empty?

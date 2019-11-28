@@ -5,7 +5,7 @@ class Order < ApplicationRecord
 	after_create :order_confirmation_send
 
 	def total_price
-		self.items.to_a.map{|item| item.price }.inject(0, :+)
+		self.items.to_a.map{|item| item.price }.inject(0, :+).round(2)
 	end
 	def order_confirmation_send
     	UserMailer.order_confirmation_email(User.find(self.user_id),self).deliver_now
