@@ -19,6 +19,7 @@ class ItemsController < ApplicationController
 
   def show
   	@item = Item.find(params[:id])
+		@page_title = @item.title
   end
   def edit
   	@item = Item.find(params[:id])
@@ -27,7 +28,7 @@ class ItemsController < ApplicationController
   def update
   	@item = Item.find(params[:id])
   	if @item.update(title: params[:title], description: params[:description], price: params[:price])
-  		flash[:success] = 'La carte a été mise à jour' 
+  		flash[:success] = 'La carte a été mise à jour'
         redirect_to @item
     else
     	flash[:error] = 'Erreur'
