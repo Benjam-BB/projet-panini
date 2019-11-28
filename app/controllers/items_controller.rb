@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
   def new
   end
   def create
-  	@item=Item.new(title: params[:title], description: params[:description], price: params[:price].round(2), position: params[:position])
+  	@item=Item.new(title: params[:title], description: params[:description], price: params[:price].to_f.round(2), position: params[:position])
   	if @item.save
   		flash[:success] = 'La carte a été créée - ajoutez une image'
   		redirect_to edit_item_path(@item.id)
